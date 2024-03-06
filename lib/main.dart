@@ -28,7 +28,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Entrada de Dados'),
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
+        title: const Text(
+          'Entrada de Dados',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
       body: Form(
         child: Padding(
@@ -37,7 +42,11 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               const Text(
                 'Seja bem-vindo! Aplicativo para entrada de dados:',
-                style: TextStyle(fontSize: 24, color: Colors.blue),
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               TextFormField(
                 keyboardType: TextInputType.name,
@@ -46,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
               TextFormField(
                 keyboardType: TextInputType.number,
                 decoration: const InputDecoration(labelText: 'Idade:'),
+                maxLength: 3,
               ),
               TextFormField(
                 keyboardType: TextInputType.emailAddress,
@@ -55,7 +65,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 keyboardType: TextInputType.phone,
                 decoration: const InputDecoration(labelText: 'Celular:'),
               ),
+              const SizedBox(
+                height: 30,
+              ),
               ElevatedButton.icon(
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.blue),
+                  foregroundColor: MaterialStatePropertyAll(Colors.white),
+                  shape: MaterialStatePropertyAll(
+                    LinearBorder(),
+                  ),
+                ),
                 onPressed: () {},
                 icon: const Icon(Icons.file_download_outlined),
                 label: const Text('Salvar'),
